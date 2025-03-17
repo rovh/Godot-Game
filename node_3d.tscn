@@ -1,23 +1,65 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddetysum7y1qm"]
+[gd_scene load_steps=4 format=3 uid="uid://bii3vrdg8o4e0"]
 
-[ext_resource type="Material" uid="uid://bcyfc1rwwwk0n" path="res://new_standard_material_3d.tres" id="1_a202f"]
+[ext_resource type="Material" uid="uid://bcyfc1rwwwk0n" path="res://Materials/Base.tres" id="1_a202f"]
+[ext_resource type="Material" uid="uid://c5vqerwnv4gr4" path="res://Materials/Area.tres" id="2_noarx"]
+[ext_resource type="Material" uid="uid://ckybpni6vd3wv" path="res://Materials/Borders.tres" id="3_a0tk4"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a202f"]
+[node name="Main" type="Node"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8, 0)
+current = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 9, 0, 0, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(-0.583357, -0.351847, 0.732051, -0.0543394, 0.916188, 0.397047, -0.810396, 0.191841, -0.553584, 5.31037, 2.74172, -3.61373)
+
+[node name="AreaObjects" type="Node3D" parent="Node3D"]
+
+[node name="BaseTop" type="CSGSphere3D" parent="Node3D/AreaObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.01928)
 material_override = ExtResource("1_a202f")
+radial_segments = 32
+rings = 16
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.583357, -0.351847, 0.732051, -0.0543394, 0.916188, 0.397048, -0.810396, 0.191841, -0.553584, 2.30459, 2.74172, -1.86802)
+[node name="BaseBottom" type="CSGSphere3D" parent="Node3D/AreaObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.28102)
+material_override = ExtResource("1_a202f")
+radial_segments = 32
+rings = 16
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123677, 3.58923)
-radial_segments = 18
-rings = 9
-material = SubResource("StandardMaterial3D_a202f")
+[node name="Area2" type="CSGBox3D" parent="Node3D/AreaObjects"]
+transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 9, 0, 0, 0)
+material_override = ExtResource("2_noarx")
+material = ExtResource("2_noarx")
+
+[node name="BorderCenter" type="CSGBox3D" parent="Node3D/AreaObjects"]
+transform = Transform3D(0.05, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(1, 1, 6.21777)
+material = ExtResource("3_a0tk4")
+
+[node name="BorderCenter6" type="CSGBox3D" parent="Node3D/AreaObjects"]
+transform = Transform3D(0.05, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(1, 1, 6.21777)
+material = ExtResource("3_a0tk4")
+
+[node name="BorderCenter4" type="CSGBox3D" parent="Node3D/AreaObjects"]
+transform = Transform3D(-2.18557e-09, 0, 1, 0, 0.5, 0, -0.05, 0, -4.37114e-08, -1.58078, 0, 4.69956e-08)
+size = Vector3(1, 1, 1.65417)
+material = ExtResource("3_a0tk4")
+
+[node name="BorderCenter5" type="CSGBox3D" parent="Node3D/AreaObjects"]
+transform = Transform3D(-2.18557e-09, 0, 1, 0, 0.5, 0, -0.05, 0, -4.37114e-08, 1.5769, 0, 4.69956e-08)
+size = Vector3(1, 1, 1.65417)
+material = ExtResource("3_a0tk4")
+
+[node name="BorderCenter2" type="CSGBox3D" parent="Node3D/AreaObjects"]
+transform = Transform3D(0.05, 0, 0, 0, 0.5, 0, 0, 0, 1, 2.4193, 0, 0)
+size = Vector3(1, 1, 8.84546)
+material = ExtResource("3_a0tk4")
+
+[node name="BorderCenter3" type="CSGBox3D" parent="Node3D/AreaObjects"]
+transform = Transform3D(0.05, 0, 0, 0, 0.5, 0, 0, 0, 1, -2.42778, 0, 0)
+size = Vector3(1, 1, 8.84546)
+material = ExtResource("3_a0tk4")

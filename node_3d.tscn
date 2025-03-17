@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bii3vrdg8o4e0"]
+[gd_scene load_steps=6 format=3 uid="uid://bii3vrdg8o4e0"]
 
 [ext_resource type="Material" uid="uid://bcyfc1rwwwk0n" path="res://Materials/Base.tres" id="1_a202f"]
-[ext_resource type="Script" uid="uid://dwd2qwuqg2ic7" path="res://BaseBottom.cs" id="2_jka67"]
 [ext_resource type="Material" uid="uid://c5vqerwnv4gr4" path="res://Materials/Area.tres" id="2_noarx"]
 [ext_resource type="Material" uid="uid://ckybpni6vd3wv" path="res://Materials/Borders.tres" id="3_a0tk4"]
 [ext_resource type="Material" uid="uid://cvqem74mh6uvx" path="res://Materials/Units.tres" id="4_r3fl7"]
@@ -9,7 +8,7 @@
 [sub_resource type="Curve3D" id="Curve3D_a0tk4"]
 bake_interval = 0.01
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.33728, 0, 0.923759, 0.794419, 1.77622e-05, -0.0126963, -0.794419, -1.77622e-05, 0.0126963, -0.84294, -0.00192785, -0.0632271, 0, 0, 0, 0, 0, 0, -2.5862, 0, -0.0552355, 0, 0, 0, 0, 0, 0, -2.61303, 0, -0.540259, 0, 0, 0, 0, 0, 0, -0.914325, -0.0047003, -0.461438, 0, 0, 0, 0, 0, 0, -1.00063, -3.43323e-05, -1.00359),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.00294174, 0.00222453, 2.19028, 0.4, 0, 0, -0.4, 0, 0, -0.466409, 0.00070563, 1.44599, 0, 0, 0, 0, 0, 0, -2.14389, 0.00257015, 1.44478, 0, 0, 0, 0, 0, 0, -2.13609, 0.00282407, 1.04061, 0, 0, 0, 0, 0, 0, -0.466097, -0.00201002, 1.04775, 0, 0, 0, 0, 0, 0, -0.468968, 0.00272202, 0.505556),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
@@ -41,10 +40,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.28102)
 material_override = ExtResource("1_a202f")
 radial_segments = 32
 rings = 16
-script = ExtResource("2_jka67")
 
-[node name="Area2" type="CSGBox3D" parent="Node3D/AreaObjects"]
+[node name="Area" type="CSGBox3D" parent="Node3D/AreaObjects"]
 transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 9, 0, 0, 0)
+visible = false
 material_override = ExtResource("2_noarx")
 material = ExtResource("2_noarx")
 
@@ -88,11 +87,12 @@ material = ExtResource("3_a0tk4")
 [node name="Instanes" type="Node3D" parent="Node3D"]
 
 [node name="Unit" type="Path3D" parent="Node3D/Instanes"]
-transform = Transform3D(1, 0.000791921, -0.000476569, -0.000792657, 0.999999, -0.00154717, 0.000475556, 0.00154755, 0.999999, -0.496123, 0.479487, 1.10496)
+transform = Transform3D(1, 0.000791921, -0.000476569, -0.000792657, 0.999999, -0.00154717, 0.000475556, 0.00154755, 0.999999, 0, 0.479, 1.105)
 curve = SubResource("Curve3D_a0tk4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Instanes/Unit"]
-transform = Transform3D(0.889993, -0.000792654, 0.455967, 5.82075e-11, 0.999996, 0.00173839, -0.455968, -0.00154716, 0.889992, -0.33728, 0, 0.923759)
+transform = Transform3D(0.00087708, 0.00134675, 0.999961, -0.000962564, 0.99997, -0.00134589, -0.999961, -0.000961391, 0.000878375, -1.76636, 0.00204421, 1.44512)
+progress = 2.25187
 
 [node name="Unit" type="CSGSphere3D" parent="Node3D/Instanes/Unit/PathFollow3D"]
 transform = Transform3D(0.146849, -7.27596e-11, -0.075235, -0.000130789, 0.165, -0.000255283, 0.0752348, 0.000286837, 0.146849, 0, 0, 0)

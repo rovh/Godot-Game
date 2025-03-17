@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Game"
+run/main_scene="uid://bii3vrdg8o4e0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,4 +21,4 @@ window/stretch/scale=1.2
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/followtransform/plugin.cfg")
+enabled=PackedStringArray()

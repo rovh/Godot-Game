@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://108kbhados4r"]
+
+[ext_resource type="Material" uid="uid://cvqem74mh6uvx" path="res://Materials/Units.tres" id="1_5xcv1"]
+
+[node name="ObjectToInstance" type="Node3D"]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+material_override = ExtResource("1_5xcv1")

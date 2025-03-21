@@ -48,13 +48,13 @@ transform = Transform3D(-0.583357, -0.351847, 0.732051, -0.0543394, 0.916188, 0.
 [node name="AreaObjects" type="Node3D" parent="Node3D"]
 
 [node name="BaseTop" type="CSGSphere3D" parent="Node3D/AreaObjects"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -4.5)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -4.6)
 material_override = ExtResource("1_a202f")
 radial_segments = 32
 rings = 16
 
 [node name="BaseBottom" type="CSGSphere3D" parent="Node3D/AreaObjects"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 4.4)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 4.6)
 material_override = ExtResource("1_a202f")
 radial_segments = 32
 rings = 16
@@ -68,7 +68,7 @@ material = ExtResource("2_noarx")
 [node name="Borders" type="Node3D" parent="Node3D/AreaObjects"]
 
 [node name="BorderCenterVertical" type="CSGBox3D" parent="Node3D/AreaObjects/Borders"]
-transform = Transform3D(0.08, 0, 0, 0, 0.5, 0, 0, 0, 1.1, 0, 0, 0)
+transform = Transform3D(0.08, 0, 0, 0, 0.5, 0, 0, 0, 0.876, 0, 0, 0)
 size = Vector3(1, 1, 6.21777)
 material = ExtResource("3_a0tk4")
 

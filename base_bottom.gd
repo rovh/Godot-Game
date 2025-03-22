@@ -3,7 +3,6 @@ extends CSGSphere3D
 #@export var unit: Node
 
 #var mynode = preload("res://node_3d_2.tscn")
-
 #func _input(event):
    ## Mouse in viewport coordinates.
 	#if event is InputEventMouseButton:

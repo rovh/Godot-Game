@@ -11,51 +11,44 @@
 [ext_resource type="Material" uid="uid://cxmkle7xx3htp" path="res://Materials/ActiveSelection2.tres" id="9_4arys"]
 
 [node name="Main" type="Node"]
-
-[node name="Control" type="Control" parent="." node_paths=PackedStringArray("BaseBottom", "offset_object_left", "offset_object_right", "active_selection_object", "active_selection_object_left_bottom", "active_selection_object_left_top", "active_selection_object_right_bottom", "active_selection_object_right_top")]
-layout_mode = 3
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -648.0
-offset_right = 576.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(42, 54)
 script = ExtResource("1_i5arm")
-BaseBottom = NodePath("../Node3D/AreaObjects/BaseBottom")
-offset_object_left = NodePath("../Node3D/InstanceOffset/InstanceOffsetLeft")
-offset_object_right = NodePath("../Node3D/InstanceOffset/InstanceOffsetRight")
-active_selection_object = NodePath("../Node3D/ActiveSelection")
-active_selection_object_left_bottom = NodePath("../Node3D/ActiveSelectionOffset/Offset_Bottom_Left")
-active_selection_object_left_top = NodePath("../Node3D/ActiveSelectionOffset/Offset_Top_Left")
-active_selection_object_right_bottom = NodePath("../Node3D/ActiveSelectionOffset/Offset_Bottom_Right")
-active_selection_object_right_top = NodePath("../Node3D/ActiveSelectionOffset/Offset_Top_Right")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.497
+anchor_right = 0.497
+anchor_bottom = 1.0
+offset_left = -572.544
+offset_right = 579.456
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(42, 54)
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.512812
+anchor_left = 0.505
 anchor_top = 0.474
-anchor_right = 0.512812
-anchor_bottom = 0.474
+anchor_right = 0.696
+anchor_bottom = 0.973926
 offset_left = 0.240051
-offset_top = -0.152069
-offset_right = 220.24
-offset_bottom = 323.848
+offset_top = -0.152039
+offset_right = 0.207947
+offset_bottom = -0.104004
 focus_mode = 0
-text = "Choose"
+text = "Button"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 422.0
-offset_top = 541.0
-offset_right = 512.0
-offset_bottom = 572.0
-text = "Pass Move"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = 493.0
+offset_right = -4.0
+offset_bottom = -17.0
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -69,39 +62,19 @@ size = 11.5
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
 transform = Transform3D(-0.866025, -0.25, 0.433013, 1.49012e-08, 0.866025, 0.5, -0.5, 0.433013, -0.75, 5.36657, 2.742, -3.02527)
 
-[node name="InstanceOffset" type="Node3D" parent="Node3D"]
-
-[node name="InstanceOffsetLeft" type="Node3D" parent="Node3D/InstanceOffset"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11996, 0, 1.41997)
-
-[node name="InstanceOffsetRight" type="Node3D" parent="Node3D/InstanceOffset"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06829, 0, 1.41997)
-
-[node name="ActiveSelection" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(2.35806, 0, 0, 0, 0.178282, 0, 0, 0, 2.35806, 0, -3, 0)
-material = ExtResource("8_jsk3o")
-
-[node name="ColourChanger" type="MeshInstance3D" parent="Node3D/ActiveSelection"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.550868, 0, -1.04547)
-material_override = ExtResource("8_jsk3o")
-
-[node name="ActiveSelection2" type="CSGBox3D" parent="Node3D/ActiveSelection"]
-transform = Transform3D(0.92407, 0, 0, 0, 0.92407, 0, 0, 0, 0.92407, 0, 0.592371, 0)
-material = ExtResource("9_4arys")
-
 [node name="ActiveSelectionOffset" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0199995, 0.905587, 0)
 
-[node name="Offset_Bottom_Left" type="Node3D" parent="Node3D/ActiveSelectionOffset"]
+[node name="EmptyOffsetLeftBottom" type="Node3D" parent="Node3D/ActiveSelectionOffset"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16897, 0, 2.27441)
 
-[node name="Offset_Bottom_Right" type="Node3D" parent="Node3D/ActiveSelectionOffset"]
+[node name="EmptyOffsetRightBottom" type="Node3D" parent="Node3D/ActiveSelectionOffset"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.257, 0, 2.27441)
 
-[node name="Offset_Top_Left" type="Node3D" parent="Node3D/ActiveSelectionOffset"]
+[node name="EmptyOffsetLeftTop" type="Node3D" parent="Node3D/ActiveSelectionOffset"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21226, 0, -2.29464)
 
-[node name="Offset_Top_Right" type="Node3D" parent="Node3D/ActiveSelectionOffset"]
+[node name="EmptyOffsetRightTop" type="Node3D" parent="Node3D/ActiveSelectionOffset"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21371, 0, -2.29464)
 
 [node name="AreaObjects" type="Node3D" parent="Node3D"]
@@ -172,6 +145,25 @@ material = ExtResource("3_a0tk4")
 [node name="ObjectToInstance" parent="Node3D" instance=ExtResource("6_i5arm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
-[connection signal="button_down" from="Control/Button" to="Control" method="_on_button_down"]
-[connection signal="button_up" from="Control/Button" to="Control" method="_on_button_up"]
-[connection signal="pressed" from="Control/Button2" to="Control" method="_on_button_2_pressed"]
+[node name="InstanceOffset" type="Node3D" parent="Node3D"]
+
+[node name="InstanceOffsetLeft" type="Node3D" parent="Node3D/InstanceOffset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11996, 0, 1.41997)
+
+[node name="InstanceOffsetRight" type="Node3D" parent="Node3D/InstanceOffset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06829, 0, 1.41997)
+
+[node name="ActiveSelection" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(2.35806, 0, 0, 0, 0.178282, 0, 0, 0, 2.35806, 0, -3, 0)
+material = ExtResource("8_jsk3o")
+
+[node name="ColourChanger" type="MeshInstance3D" parent="Node3D/ActiveSelection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.550868, 0, -1.04547)
+material_override = ExtResource("8_jsk3o")
+
+[node name="ActiveSelection2" type="CSGBox3D" parent="Node3D/ActiveSelection"]
+transform = Transform3D(0.92407, 0, 0, 0, 0.92407, 0, 0, 0, 0.92407, 0, 0.592371, 0)
+material = ExtResource("9_4arys")
+
+[connection signal="button_down" from="Control/Button" to="Control/Button" method="_on_button_down"]
+[connection signal="button_up" from="Control/Button" to="Control/Button" method="_on_button_up"]

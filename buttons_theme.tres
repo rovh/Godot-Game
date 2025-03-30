@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b6muhc55cn5tj"]
+
+[ext_resource type="StyleBox" uid="uid://doorpd41b5ovm" path="res://new_style_box_flat.tres" id="1_jygeu"]
+
+[resource]
+Button/styles/hover = ExtResource("1_jygeu")
+Button/styles/normal = ExtResource("1_jygeu")
+Button/styles/pressed = ExtResource("1_jygeu")

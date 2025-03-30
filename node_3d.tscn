@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bii3vrdg8o4e0"]
+[gd_scene load_steps=11 format=3 uid="uid://bii3vrdg8o4e0"]
 
 [ext_resource type="Material" uid="uid://bcyfc1rwwwk0n" path="res://Materials/Base.tres" id="1_a202f"]
 [ext_resource type="Script" uid="uid://88gkde0nbx81" path="res://button.gd" id="1_i5arm"]
-[ext_resource type="Script" uid="uid://dpc3we6abmyoh" path="res://base_bottom.gd" id="2_jka67"]
+[ext_resource type="Theme" uid="uid://b6muhc55cn5tj" path="res://buttons_theme.tres" id="2_4arys"]
 [ext_resource type="Material" uid="uid://c5vqerwnv4gr4" path="res://Materials/Area.tres" id="2_noarx"]
+[ext_resource type="Theme" uid="uid://dte5pbabo0f7q" path="res://button_2_theme.tres" id="3_6iypd"]
 [ext_resource type="Material" uid="uid://ckybpni6vd3wv" path="res://Materials/Borders.tres" id="3_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://108kbhados4r" path="res://object_to_instance.tscn" id="6_i5arm"]
 [ext_resource type="Material" uid="uid://olaqlx7tu7gd" path="res://Materials/Transparent.tres" id="6_wc5p8"]
@@ -13,17 +14,19 @@
 [node name="Main" type="Node"]
 
 [node name="Control" type="Control" parent="." node_paths=PackedStringArray("BaseBottom", "offset_object_left", "offset_object_right", "active_selection_object", "active_selection_object_left_bottom", "active_selection_object_left_top", "active_selection_object_right_bottom", "active_selection_object_right_top")]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -648.0
-offset_right = 576.0
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -450.0
+offset_right = 250.0
+offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(42, 54)
 script = ExtResource("1_i5arm")
 BaseBottom = NodePath("../Node3D/AreaObjects/BaseBottom")
 offset_object_left = NodePath("../Node3D/InstanceOffset/InstanceOffsetLeft")
@@ -35,26 +38,38 @@ active_selection_object_right_bottom = NodePath("../Node3D/ActiveSelectionOffset
 active_selection_object_right_top = NodePath("../Node3D/ActiveSelectionOffset/Offset_Top_Right")
 
 [node name="Button" type="Button" parent="Control"]
+clip_contents = true
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.512812
-anchor_top = 0.474
-anchor_right = 0.512812
-anchor_bottom = 0.474
-offset_left = 0.240051
-offset_top = -0.152069
-offset_right = 220.24
-offset_bottom = 323.848
-focus_mode = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = 93.0
+offset_right = 190.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_4arys")
 text = "Choose"
-metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 422.0
-offset_top = 541.0
-offset_right = 512.0
-offset_bottom = 572.0
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = 93.0
+offset_right = -6.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_6iypd")
+theme_type_variation = &"PassButton"
 text = "Pass Move"
 
 [node name="Node3D" type="Node3D" parent="."]
@@ -64,7 +79,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8, 
 visible = false
 projection = 1
 current = true
-size = 11.5
+size = 11.2
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
 transform = Transform3D(-0.866025, -0.25, 0.433013, 1.49012e-08, 0.866025, 0.5, -0.5, 0.433013, -0.75, 5.36657, 2.742, -3.02527)
@@ -117,7 +132,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.20588, 0, 4.43763)
 material_override = ExtResource("1_a202f")
 radial_segments = 32
 rings = 16
-script = ExtResource("2_jka67")
 
 [node name="Area" type="CSGBox3D" parent="Node3D/AreaObjects"]
 transform = Transform3D(5, 0, 0, 0, 0.055, 0, 0, 0, 11.111, 0, 0, 0)

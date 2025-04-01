@@ -7,4 +7,5 @@
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 0, 0)
 material_override = ExtResource("1_5xcv1")
+radial_segments = 16
 material = ExtResource("1_5xcv1")

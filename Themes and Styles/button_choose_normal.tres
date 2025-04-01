@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxFlat" format=3 uid="uid://ctfh3vmkp68ap"]
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://doorpd41b5ovm"]
 
 [resource]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -9,4 +9,5 @@ border_width_bottom = 5
 border_color = Color(0.8, 0.8, 0.8, 0.494118)
 border_blend = true
 corner_radius_top_left = 20
-corner_radius_bottom_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20

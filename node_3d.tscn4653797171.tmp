@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://88gkde0nbx81" path="res://main.gd" id="1_4arys"]
 [ext_resource type="Material" uid="uid://bcyfc1rwwwk0n" path="res://Materials/Base.tres" id="1_a202f"]
-[ext_resource type="Theme" uid="uid://b6muhc55cn5tj" path="res://Themes and Styles/Themes/button_choose.tres" id="2_4arys"]
+[ext_resource type="Theme" uid="uid://b6muhc55cn5tj" path="res://Themes and Styles/button_choose.tres" id="2_4arys"]
 [ext_resource type="Material" uid="uid://c5vqerwnv4gr4" path="res://Materials/Area.tres" id="2_noarx"]
-[ext_resource type="Theme" uid="uid://dte5pbabo0f7q" path="res://Themes and Styles/Themes/button_pass.tres" id="3_6iypd"]
+[ext_resource type="Theme" uid="uid://dte5pbabo0f7q" path="res://Themes and Styles/button_pass.tres" id="3_6iypd"]
 [ext_resource type="Material" uid="uid://ckybpni6vd3wv" path="res://Materials/Borders.tres" id="3_a0tk4"]
-[ext_resource type="Script" uid="uid://c4tubpbhag16l" path="res://code.gd" id="4_6iypd"]
-[ext_resource type="StyleBox" uid="uid://c8swbdqrm1e8d" path="res://Themes and Styles/actice_selection.tres" id="4_tereu"]
+[ext_resource type="Script" uid="uid://qcd2tgrwkhbf" path="res://AI.gd" id="4_6iypd"]
+[ext_resource type="StyleBox" uid="uid://c8swbdqrm1e8d" path="res://Themes and Styles/Actice_Selection.tres" id="4_tereu"]
 [ext_resource type="PackedScene" uid="uid://108kbhados4r" path="res://object_to_instance.tscn" id="6_i5arm"]
 [ext_resource type="Material" uid="uid://olaqlx7tu7gd" path="res://Materials/Transparent.tres" id="6_wc5p8"]
 
@@ -22,9 +22,6 @@ interpolation_mode = 2
 Label/styles/normal = ExtResource("4_tereu")
 
 [node name="Main" type="Node"]
-
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
-title = "Ai Error"
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -206,64 +203,15 @@ material_override = ExtResource("1_a202f")
 radial_segments = 32
 rings = 16
 
-[node name="HealthLabel" type="Label3D" parent="Node3D/AreaObjects/BaseBottom"]
-transform = Transform3D(2.37376, 0, 0, 0, -1.0376e-07, 2.37376, 0, -2.37376, -1.0376e-07, 0, 0.7, 0)
-modulate = Color(0.45, 0.45, 0.45, 0)
-outline_modulate = Color(1, 1, 1, 1)
-text = "100
-"
-outline_size = 3
-
 [node name="Area" type="CSGBox3D" parent="Node3D/AreaObjects"]
 transform = Transform3D(5, 0, 0, 0, 0.055, 0, 0, 0, 11.111, 0, 0, 0)
 material_override = ExtResource("2_noarx")
 material = ExtResource("2_noarx")
 
-[node name="UILabels" type="Marker3D" parent="Node3D/AreaObjects"]
-transform = Transform3D(2.1596, 0, 0, 0, -9.4399e-08, 2.1596, 0, -2.1596, -9.4399e-08, 0, 0, 0)
-
-[node name="TopLeft" type="Label3D" parent="Node3D/AreaObjects/UILabels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79938, 1.42948, 1.20483)
-text = "Enemy
-attacks"
-
-[node name="TopRight" type="Label3D" parent="Node3D/AreaObjects/UILabels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73593, 1.4424, 1.20483)
-text = "Enemy
-attacks"
-
-[node name="TopLeft2" type="Label3D" parent="Node3D/AreaObjects/UILabels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.547099, 1.42647, 1.20483)
-text = "Units Count"
-
-[node name="TopRight2" type="Label3D" parent="Node3D/AreaObjects/UILabels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.559064, 1.41588, 1.20483)
-text = "Units Count"
-
-[node name="TopAll" type="Label3D" parent="Node3D/AreaObjects/UILabels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.490098, 2.39031, 1.20483)
-text = "All Units"
-
 [node name="BaseTopUI" type="Marker3D" parent="Node3D/AreaObjects"]
 
-[node name="UnitsCounterAll" type="Label3D" parent="Node3D/AreaObjects/BaseTopUI"]
+[node name="UnitsCounter" type="Label3D" parent="Node3D/AreaObjects/BaseTopUI"]
 transform = Transform3D(3.48271, 0, 0, 0, -1.52234e-07, 3.48271, 0, -3.48271, -1.52234e-07, -1.10611, 0.717985, -4.61805)
-text = "000"
-
-[node name="UnitsCounterLeftRemoved" type="Label3D" parent="Node3D/AreaObjects/BaseTopUI/UnitsCounterAll"]
-transform = Transform3D(0.725286, 0, 0, 0, 0.725286, 3.55271e-15, 0, -3.55271e-15, 0.725286, -0.795574, -0.633395, -4.55577)
-text = "Removed"
-
-[node name="UnitsCounterRightRemoved" type="Label3D" parent="Node3D/AreaObjects/BaseTopUI/UnitsCounterAll"]
-transform = Transform3D(0.779695, 0, 0, 0, 0.779695, 0, 0, 0, 0.779695, 1.40712, -0.620687, -4.88206)
-text = "Removed"
-
-[node name="UnitsCounterLeft" type="Label3D" parent="Node3D/AreaObjects/BaseTopUI"]
-transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, -1.27116, 0.659673, -2.42848)
-text = "000"
-
-[node name="UnitsCounterRight" type="Label3D" parent="Node3D/AreaObjects/BaseTopUI/UnitsCounterLeft"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.774725, 0, 0)
 text = "000"
 
 [node name="MiddleLine" type="CSGBox3D" parent="Node3D/AreaObjects"]
